@@ -85,6 +85,12 @@ Credentials are not included in this repository.
 
 ---
 
+## Screenshots
+
+screenshots/image1.png
+
+---
+
 ## Author
 
 Bamiduro Gabriel Eniola (GBT3K)
