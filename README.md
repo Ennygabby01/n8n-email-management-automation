@@ -87,7 +87,47 @@ Credentials are not included in this repository.
 
 ## Screenshots
 
-![Workflow Canvas](screenshots/image1.png)
+### Workflow Canvas
+
+<p align="center">
+  <img src="screenshots/image1.png" width="800">
+</p>
+
+---
+
+### Slack Notifications
+
+<p align="center">
+  <img src="screenshots/image2.png" width="45%">
+  <img src="screenshots/image3.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/image4.png" width="45%">
+  <img src="screenshots/image5.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/image6.png" width="45%">
+  <img src="screenshots/image7.png" width="45%">
+</p>
+
+---
+
+### Customer Service Acknowledgement Email
+
+<p align="center">
+  <img src="screenshots/image8.png" width="800">
+</p>
+
+---
+
+### Execution Logs
+
+<p align="center">
+  <img src="screenshots/image9.png" width="45%">
+  <img src="screenshots/image10.png" width="45%">
+</p>
 
 ---
 
