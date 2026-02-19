@@ -122,15 +122,6 @@ Credentials are not included in this repository.
 
 ---
 
-### Execution Logs
-
-<p align="center">
-  <img src="screenshots/image7.png" width="45%">
-  <img src="screenshots/image8.png" width="45%">
-</p>
-
----
-
 ## Author
 
 Bamiduro Gabriel Eniola (GBT3K)
