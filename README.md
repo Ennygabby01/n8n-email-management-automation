@@ -107,11 +107,6 @@ Credentials are not included in this repository.
   <img src="screenshots/image5.png" width="45%">
 </p>
 
-<p align="center">
-  <img src="screenshots/image6.png" width="45%">
-  <img src="screenshots/image7.png" width="45%">
-</p>
-
 ---
 
 ### Customer Service Acknowledgement Email
