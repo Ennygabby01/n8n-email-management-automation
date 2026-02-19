@@ -1,0 +1,340 @@
+{
+  "name": "Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "mailbox": "n8n-test",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailReadImap",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b95e57d3-5a8a-4c0b-a591-2b08b9c8f3f3",
+      "name": "Email Trigger (IMAP)",
+      "credentials": {
+        "imap": {
+          "id": "8NcGHSNTBPFAMaJt",
+          "name": "IMAP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "d5ea95b7-eae6-4bcb-a746-e9d2917bdc77",
+                    "leftValue": "={{$json[\"subject\"]}}",
+                    "rightValue": "sales",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "3d084c56-c712-45b6-b9e5-748d4ed52277",
+                    "leftValue": "={{$json[\"subject\"]}}",
+                    "rightValue": "marketing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "a7390221-3b8c-4d18-8994-35752b29f733",
+                    "leftValue": "={{$json[\"subject\"]}}",
+                    "rightValue": "hr",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "b1a49106-9ea6-4106-9ef1-411c2ad0b453",
+                    "leftValue": "={{$json[\"subject\"]}}",
+                    "rightValue": "customer service",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "5e3fdde7-73ad-47df-8242-657977a66ef3",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0AFVKJH5RB",
+          "mode": "list",
+          "cachedResultName": "sales"
+        },
+        "text": "=New Email Received\n\nFrom: {{$json[\"from\"]}}\nSubject: {{$json[\"subject\"]}}\n\nPreview:\n{{$json[\"textPlain\"].slice(0,150)}}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        -192
+      ],
+      "id": "8e7e3649-6ec3-4b5d-b515-719cf3cc3f0e",
+      "name": "Send a message",
+      "webhookId": "103b3fbb-d700-486f-bbc8-192fd2306687",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "s1IIwBg7W2cLTLk1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0AGC07MC0Z",
+          "mode": "list",
+          "cachedResultName": "marketing"
+        },
+        "text": "=New Email Received\n\nFrom: {{$json[\"from\"]}}\nSubject: {{$json[\"subject\"]}}\n\nPreview:\n{{$json[\"textPlain\"].slice(0,150)}}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        -32
+      ],
+      "id": "4735419c-f0c1-40bc-9326-61990335f921",
+      "name": "Send a message1",
+      "webhookId": "fd6d5900-8ccd-45ee-98db-2942b149d7fc",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "s1IIwBg7W2cLTLk1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0AFVKQBJR3",
+          "mode": "list",
+          "cachedResultName": "hr"
+        },
+        "text": "=New Email Received\n\nFrom: {{$json[\"from\"]}}\nSubject: {{$json[\"subject\"]}}\n\nPreview:\n{{$json[\"textPlain\"].slice(0,150)}}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        112
+      ],
+      "id": "6bc4f9b7-a78d-407b-9fef-d031ca7d67c2",
+      "name": "Send a message2",
+      "webhookId": "38c6a528-7ac8-4579-9dd0-a243587ce7d1",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "s1IIwBg7W2cLTLk1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0AFSLTPCKV",
+          "mode": "list",
+          "cachedResultName": "customer-service"
+        },
+        "text": "=New Email Received\n\nFrom: {{$json[\"from\"]}}\nSubject: {{$json[\"subject\"]}}\n\nPreview:\n{{$json[\"textPlain\"].slice(0,150)}}",
+        "otherOptions": {}
+      },
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        272
+      ],
+      "id": "5659e531-63fa-45da-9e39-43ab91b0c890",
+      "name": "Send a message3",
+      "webhookId": "d44d824c-218e-4eac-a387-1f1454dda81d",
+      "credentials": {
+        "slackOAuth2Api": {
+          "id": "s1IIwBg7W2cLTLk1",
+          "name": "Slack account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "bamiduroeniolagabriel@gmail.com",
+        "toEmail": "={{$json[\"from\"]}}",
+        "subject": "We've received your message",
+        "emailFormat": "text",
+        "text": "Hello,\n\nThank you for contacting our customer service team.\nYour message has been received and is being reviewed.\nWe will respond shortly.\n\nBest regards,\nCustomer Service Team",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        480
+      ],
+      "id": "45ffd3eb-5095-484f-9f8d-6fcf53323a58",
+      "name": "Send an Email",
+      "webhookId": "a27343a6-2b10-4d92-938a-5d6e270be575",
+      "credentials": {
+        "smtp": {
+          "id": "NRERTQVSE5z1eoGM",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Email Trigger (IMAP)": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message3": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "31e6f0b9-e72a-4373-b479-5ddda5039a54",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b95c014a3f0f983be7f972f56625f2ad45e3335defc121bc66a22c95b4b8bdb3"
+  },
+  "id": "8deyXUnjYMH1UF0Q",
+  "tags": []
+}
