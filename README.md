@@ -87,7 +87,7 @@ Credentials are not included in this repository.
 
 ## Screenshots
 
-screenshots/image1.png
+![Workflow Canvas](screenshots/image1.png)
 
 ---
 
