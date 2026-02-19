@@ -90,7 +90,12 @@ Credentials are not included in this repository.
 ### Workflow Canvas
 
 <p align="center">
-  <img src="screenshots/image1.png" width="800">
+  <img src="screenshots/image1.png" width="45%">
+  <img src="screenshots/image9.png" width="45%">
+</p>
+<p align="center">
+  <img src="screenshots/image10.png" width="45%">
+  <img src="screenshots/image11.png" width="45%">
 </p>
 
 ---
@@ -112,7 +117,7 @@ Credentials are not included in this repository.
 ### Customer Service Acknowledgement Email
 
 <p align="center">
-  <img src="screenshots/image8.png" width="800">
+  <img src="screenshots/image6.png" width="800">
 </p>
 
 ---
@@ -120,8 +125,8 @@ Credentials are not included in this repository.
 ### Execution Logs
 
 <p align="center">
-  <img src="screenshots/image9.png" width="45%">
-  <img src="screenshots/image10.png" width="45%">
+  <img src="screenshots/image7.png" width="45%">
+  <img src="screenshots/image8.png" width="45%">
 </p>
 
 ---
